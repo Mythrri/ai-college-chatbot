@@ -1,7 +1,7 @@
 async function getBotReply(input) {
   let lower = input.toLowerCase();
-  if (lower.includes("who is mythrri")) return "I was built by Mythrri! 👩‍💻 She is from Karnataka, India. She is a developer who built 6 projects including me!";
-  if (lower.includes("your name")) return "My name is Mythrri AI! 🤖";
+if (lower.includes("dhoni")) return "Yes! MS Dhoni retired from IPL on Nov 17, 2026! 🏏 He played 18 years for CSK, won 5 IPL titles. Now from IPL 2027, he is CSK's Team Mentor, not a player. He retired from international cricket in 2020.";
+if (lower.includes("ipl 2027")) return "IPL 2027 schedule is not announced yet! But big news: MS Dhoni retired and will be CSK Mentor. Auction is on Dec 16 in Goa. Stay tuned!";
 
   try {
     let response = await fetch(`https://text.pollinations.ai/${encodeURIComponent("You are Mythrri AI, friendly assistant. Answer short and simple: " + input)}`);
