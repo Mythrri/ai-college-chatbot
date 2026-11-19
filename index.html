@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AI College Chatbot</title>
+  <title>Mythrri AI - ChatGPT Style</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="chat-box">
-    <div class="header">🤖 AI College Assistant</div>
-    <div id="chat"></div>
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Ask: fees, hostel, courses, placement...">
-      <button onclick="sendMessage()">Send</button>
+  <div class="sidebar">
+    <button class="new-chat" onclick="newChat()">+ New Chat</button>
+    <div class="history">
+      <p>📜 Recent Chats</p>
+      <div class="hist-item">💬 What is AI?</div>
+      <div class="hist-item">💬 Who is Mythrri?</div>
+      <div class="hist-item">💬 Python vs JavaScript</div>
+    </div>
+    <div class="profile">
+      <div class="avatar">M</div>
+      <div><b>Mythrri</b><br><small>Free Plan</small></div>
     </div>
   </div>
-  <script src="app.js"></script>
+
+  <div class="main">
+    <div class="topbar">
+      <b>✨ Mythrri AI</b> <span>GPT-style Assistant</span>
+      <button onclick="toggleDark()">🌙 Dark</button>
+    </div>
+
+    <div id="chatBox" class="chat-box">
+      <div class="welcome">
+        <div class="logo">🤖</div>
+        <h1>How can I help you today?</h1>
+        <p>Ask me anything about AI, Python, UK Studies or Me!</p>
+        <div class="suggestions">
+          <button onclick="askSuggestion('What is AI?')">What is AI? 🤔</button>
+          <button onclick="askSuggestion('Who is Mythrri?')">Who is Mythrri? 👩</button>
+          <button onclick="askSuggestion('Best UK Universities for AI?')">Best UK Universities for AI? 🇬🇧</button>
+          <button onclick="askSuggestion('Tell me a joke')">Tell me a joke 😂</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Message Mythrri AI..." onkeypress="if(event.key==='Enter') sendMessage()">
+      <button onclick="sendMessage()">➤</button>
+    </div>
+    <p class="note">Mythrri AI can make mistakes. Built by Mythrri with HTML, CSS & JS.</p>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
