@@ -48,3 +48,14 @@ function addMessage(text, sender) {
 function askSuggestion(q){ document.getElementById('userInput').value=q; sendMessage(); }
 function newChat(){ location.reload(); }
 function toggleDark(){ document.body.classList.toggle('dark'); }
+// FIX - Make Enter + Button work always
+document.addEventListener('DOMContentLoaded', function() {
+  let input = document.getElementById('userInput');
+  if (input) {
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') sendMessage();
+    });
+  }
+  let btn = document.querySelector('button');
+  if (btn) btn.onclick = sendMessage;
+});
